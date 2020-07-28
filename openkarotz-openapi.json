@@ -18,6 +18,7 @@
                             "application/json": {
                                 "schema":{
                                     "type": "object",
+                                    "title": "status",
                                     "properties": {
                                       "version": {
                                         "type": "string",
