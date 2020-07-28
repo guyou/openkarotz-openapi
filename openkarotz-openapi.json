@@ -139,6 +139,35 @@
                     }
                 }
             }
-        }
+        },
+        "/cgi-bin/wakeup": {
+            "summary": "wakeup",
+            "description": "Permet de réveiller le lapin, si le paramètre silent est utilisé avec la valeur 1 aucun son n’est joué.",
+            "get": {
+                "summary": "wakeup karotz",
+                "responses": {
+                    "200": {
+                        "description": "Permet de réveiller le lapin",
+                        "content": {
+                            "application/json": {
+				    "example": {"return":"0","silent":"0"}
+			    }
+			}
+		    }
+		}
+	    },
+	    "parameters":[
+		    {
+			    "name": "silent",
+			    "description": "si le paramètre silent est utilisé avec la valeur 1 aucun son n’est joué.",
+			    "in": "query",
+			    "required": false,
+			    " allowEmptyValue": false,
+			    "schema": {
+				"type": "integer"
+			    }
+		    }
+	    ]
+	}
     }
 }
