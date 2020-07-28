@@ -1,0 +1,107 @@
+{
+    "openapi":"3.0.3",
+    "info":{
+        "title":"OpenKarotz API",
+        "decription":"Cf. http://www.openkarotz.org/",
+        "version":"3.10"
+    },
+    "paths":{
+        "/cgi-bin/status":{
+            "summary":"status",
+            "description":"Permet d’afficher des informations sur le karotz, la réponse est un tableau JSON avec les attributs",
+            "get":{
+                "summary":"get status",
+                "responses":{
+                    "200":{
+                        "description":"la liste des informations sur le karotz",
+                        "content":{
+                            "application/json": {
+                                "schema":{
+                                    "type": "object",
+                                    "required": [
+                                      "name"
+                                    ],
+                                    "properties": {
+                                      "version": {
+                                        "type": "string",
+                                        "description":"version des scripts installés"
+                                      },
+                                      "ears_disabled": {
+                                        "type": "integer",
+                                        "description":"1 si les oreilles on été désactivées, 0 sinon"
+                                      },
+                                      "sleep": {
+                                        "type": "integer",
+                                        "description": "1 si le lapin dors, 0 sinon"
+                                      },
+                                      "sleep_time": {
+                                          "type": "string",
+                                          "description":"si le lapin dors, contient un Timestamp de l’heure d’endormissement."
+                                      },
+                                      "led_color": {
+                                          "type": "string",
+                                          "description": "couleur actuelle de la led"
+                                      },
+                                      "led_pulse": {
+                                          "type": "integer",
+                                          "description": "1 si le lapin respire, 0 si fixe."
+                                      },
+                                      "tts_cache_size": {
+                                          "type": "integer",
+                                          "description": "Nombre de phrase(s) dans le cache TTS."
+                                      },
+                                      "usb_stick_free_space": {
+                                          "type": "string",
+                                          "description": "Place libre sur la clé USB (Version lisible)"
+                                      },
+                                      "karotz_free_Space": {
+                                          "type": "string",
+                                          "description": "Place libre dans le Karotz (Version lisible)"
+                                      },
+                                      "eth_mac": {
+                                          "type": "string",
+                                          "description": "Adresse MAC adaptateur ethernet"
+                                      },
+                                      "wlan_mac": {
+                                          "type": "string",
+                                          "description": "Adresse MAC adaptateur WIFI"
+                                      },
+                                      "nb_tags": {
+                                          "type": "integer",
+                                          "description": "Nombre de tags enregistrés."
+                                      },
+                                      "nb_moods": {
+                                          "type": "integer",
+                                          "description": "Nombre d’humeurs installées."
+                                      },
+                                      "nb_sounds": {
+                                          "type": "integer",
+                                          "description": "Nombre de Sons Installés."
+                                      },
+                                      "nb_stories": {
+                                          "type": "integer",
+                                          "description": "Nombre d’Histoires Installées."
+                                      },
+                                      "karotz_percent_used_space": {
+                                          "type": "integer",
+                                          "description": "Espace utilisé dans la mémoire du Karotz"
+                                      },
+                                      "usb_percent_used_space": {
+                                          "type":"integer",
+                                          "description": "Espace utilisé sur la clef USB"
+                                      },
+                                      "data_dir": {
+                                          "type": "string",
+                                          "description": "Emplacement des fichiers de donnés"
+                                      }
+                                    }
+                                  },
+                                "example":{"version":"210","ears_disabled":"0","sleep":"1","sleep_time":"1398086161","led_color":"000000","led_pulse":"0","tts_cache_size":"1","usb_free_space":"-1","karotz_free_space":"144.0M","eth_mac":"00:13:3B:90:97:5D","wlan_mac":"00:0E:8E:2C:93:B2","nb_tags":"14","nb_moods":"305","nb_sounds":"15","nb_stories":"0","karotz_percent_used_space":"38","usb_percent_used_space":"","data_dir":"/usr/openkarotz"}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
