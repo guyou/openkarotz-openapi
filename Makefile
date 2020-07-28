@@ -8,5 +8,10 @@ swagger-codegen-cli.jar:
 doc:
 	mkdir -p html
 	java -jar swagger-codegen-cli.jar generate -i openkarotz-openapi.json -l html -o html
+
+python:
+	mkdir -p python
+	java -jar swagger-codegen-cli.jar generate -i openkarotz-openapi.json -l python -o python -c config-python.json
+
 clean:
-	rm -rf doc
+	rm -rf doc python
