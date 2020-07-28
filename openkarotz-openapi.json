@@ -18,9 +18,6 @@
                             "application/json": {
                                 "schema":{
                                     "type": "object",
-                                    "required": [
-                                      "name"
-                                    ],
                                     "properties": {
                                       "version": {
                                         "type": "string",
