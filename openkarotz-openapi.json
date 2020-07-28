@@ -172,6 +172,25 @@
 			    }
 		    }
 	    ]
+	},
+        "/cgi-bin/sleep": {
+		"tags":["state"],
+            "summary": "sleep",
+            "description": "Permet d'endormir le lapin.",
+            "get": {
+                "summary": "sleep karotz",
+		"operationId": "sleep",
+                "responses": {
+                    "200": {
+                        "description": "Permet d'endormir le lapin",
+                        "content": {
+                            "application/json": {
+				    "example": {"return":"0"}
+			    }
+			}
+		    }
+		}
+	    }
 	}
     }
 }
