@@ -100,6 +100,45 @@
                     }
                 }
             }
+        },
+        "/cgi-bin/get_version": {
+            "summary": "get_version",
+            "description": "Renvoi les versions des différents composants",
+            "get": {
+                "summary": "get version",
+                "responses": {
+                    "200": {
+                        "description": "Renvoi les versions des différents composants",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "type": "object",
+                                    "title": "versions",
+                                    "properties": {
+                                        "version" : {
+                                            "type": "string",
+                                            "description": "version des scripts installée."
+                                        },
+                                        "rootfs_version" : {
+                                            "type": "string",
+                                            "description": "version du firmware"
+                                        },
+                                        "patch_version" : {
+                                            "type": "string",
+                                            "description": "version des patchs installés"
+                                        },
+                                        "serial" : {
+                                            "type": "string",
+                                            "description": "Numéro de série du lapin (Unique)"
+                                        }
+                                    }
+                                },
+                                "example":{"version":"210","rootfs_version":"2.0.r8","patch_version":"213","serial":"61xxxxxxxxx8926xxxxxxxxxx016","return":"0"}
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
