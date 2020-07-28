@@ -8,3 +8,5 @@ swagger-codegen-cli.jar:
 doc:
 	mkdir -p html
 	java -jar swagger-codegen-cli.jar generate -i openkarotz-openapi.json -l html -o html
+clean:
+	rm -rf doc
