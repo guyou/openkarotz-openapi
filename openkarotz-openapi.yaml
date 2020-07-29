@@ -14,6 +14,7 @@ paths:
       un tableau JSON avec les attributs
     get:
       summary: get status
+      operationId: status
       responses:
         "200":
           description: la liste des informations sur le karotz
@@ -45,6 +46,7 @@ paths:
     description: Renvoi les versions des différents composants
     get:
       summary: get version
+      operationId: version
       responses:
         "200":
           description: Renvoi les versions des différents composants
@@ -64,6 +66,7 @@ paths:
       avec la valeur 1 aucun son n’est joué.
     get:
       summary: wakeup karotz
+      operationId: wakeup
       parameters:
       - name: silent
         in: query
