@@ -82,6 +82,8 @@ paths:
           description: Permet de réveiller le lapin
           content:
             application/json:
+              schema:
+                $ref: '#/components/schemas/wakeup_response'
               example:
                 return: "0"
                 silent: "0"
@@ -96,6 +98,8 @@ paths:
           description: Permet d'endormir le lapin
           content:
             application/json:
+              schema:
+                $ref: '#/components/schemas/simple_response'
               example:
                 return: "0"
 components:
@@ -180,3 +184,28 @@ components:
         serial:
           type: string
           description: Numéro de série du lapin (Unique)
+    simple_response:
+      title: simple response
+      type: object
+      required:
+      - return
+      properties:
+        return:
+          type: integer
+          description: indicateur de succès de l'opération
+          enum:
+            - 0
+            - 1
+    wakeup_response:
+      title: wakeup response
+      allOf:
+      - $ref: '#/components/schemas/simple_response'
+      - type: object
+        properties:
+          silent:
+            type: string
+            # FIXME: produce an error. Incompatibility with inheritance?
+            #oneOf:
+            #- type: string
+            #- type: integer
+            description: la valeur silent
