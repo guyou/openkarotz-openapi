@@ -3,7 +3,7 @@ all:
 download: swagger-codegen-cli.jar
 
 swagger-codegen-cli.jar:
-	wget https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-cli/3.0.20/swagger-codegen-cli-3.0.20.jar -O swagger-codegen-cli.jar
+	wget https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-cli/3.0.21/swagger-codegen-cli-3.0.21.jar -O swagger-codegen-cli.jar
 
 doc: openkarotz-openapi.yaml
 	mkdir -p html
