@@ -53,11 +53,17 @@
                                           "description": "Nombre de phrase(s) dans le cache TTS."
                                       },
                                       "usb_stick_free_space": {
-                                          "type": "string",
+                                        "oneOf": [
+                                            { "type": "string"},
+                                            { "type": "integer"}
+                                        ],
                                           "description": "Place libre sur la clé USB (Version lisible)"
                                       },
                                       "karotz_free_Space": {
-                                          "type": "string",
+                                        "oneOf": [
+                                            { "type": "string"},
+                                            { "type": "integer"}
+                                        ],
                                           "description": "Place libre dans le Karotz (Version lisible)"
                                       },
                                       "eth_mac": {
@@ -89,7 +95,10 @@
                                           "description": "Espace utilisé dans la mémoire du Karotz"
                                       },
                                       "usb_percent_used_space": {
-                                          "type":"integer",
+                                          "oneOf": [
+                                              { "type": "string"},
+                                              { "type": "integer"}
+                                          ],
                                           "description": "Espace utilisé sur la clef USB"
                                       },
                                       "data_dir": {
